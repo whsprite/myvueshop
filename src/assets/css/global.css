@@ -1,8 +1,23 @@
-html,body,#app{
-    height:100%;
+html,
+body,
+#app {
+    height: 100%;
     margin: 0px;
     padding: 0px;
 }
-#app{
+
+#app {
     min-width: 1366px;
+}
+
+.el-card {
+    margin-top: 15px;
+}
+
+.el-cascader__dropdown {
+    height: 200px;
+}
+
+.el-cascader-panel {
+    height: 200px;
 }

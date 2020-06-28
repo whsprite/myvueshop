@@ -297,6 +297,7 @@ export default {
       this.getUserList();
       this.setRoleDialogVisible = false
     },
+  
     closeSetRoleDialog(){
       this.userInfo = [];
       this.selectedRoleId ='';

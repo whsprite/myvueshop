@@ -48,6 +48,12 @@
               <i class="el-icon-goods"></i>
               <span>商品管理</span>
             </template>
+             <el-menu-item index="/categories" @click="saveName('/categories')">
+              <template slot="title">
+                <i class="el-icon-location"></i>
+                <span>商品分类</span>
+              </template>
+            </el-menu-item>
           </el-submenu>
              <el-submenu index="4">
             <template slot="title">
