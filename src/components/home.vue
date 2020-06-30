@@ -54,6 +54,12 @@
                 <span>商品分类</span>
               </template>
             </el-menu-item>
+            <el-menu-item index="/params" @click="saveName('/params')">
+              <template slot="title">
+                <i class="el-icon-location"></i>
+                <span>分类参数</span>
+              </template>
+            </el-menu-item>
           </el-submenu>
              <el-submenu index="4">
             <template slot="title">
