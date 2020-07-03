@@ -8,6 +8,8 @@ import rights from '../components/power/rights.vue'
 import roles from '../components/power/roles.vue'
 import cate from '../components/goods/cate.vue'
 import params from '../components/goods/params.vue'
+import list from '../components/goods/list.vue'
+import add from '../components/goods/add.vue'
 Vue.use(VueRouter)
 
 　const router = new VueRouter({
@@ -21,6 +23,8 @@ Vue.use(VueRouter)
       {path:'/roles',component:roles},
       {path:'/categories',component:cate},
       {path:'/params',component:params},
+      {path:'/list',component:list},
+      {path:'/list/add',component:add},
     ]},
   ]
 })
@@ -35,3 +39,4 @@ router.beforeEach((to, from, next) => {
 });
 
 export default router;
+
