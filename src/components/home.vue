@@ -10,7 +10,16 @@
     <el-container>
       <el-aside :width="isCollapse ? '64px' : '200px'">
         <div class="menutoggle" @click="toggle">|||</div>
-        <el-menu background-color="#333744" text-color="#fff" active-text-color="#409EEF" unique-opened :collapse="isCollapse" :collapse-transition="false" router :default-active="menuname">
+        <el-menu
+          background-color="#333744"
+          text-color="#fff"
+          active-text-color="#409EEF"
+          unique-opened
+          :collapse="isCollapse"
+          :collapse-transition="false"
+          router
+          :default-active="menuname"
+        >
           <el-submenu index="1">
             <template slot="title">
               <i class="el-icon-location"></i>
@@ -43,12 +52,12 @@
               </template>
             </el-menu-item>
           </el-submenu>
-           <el-submenu index="3">
+          <el-submenu index="3">
             <template slot="title">
               <i class="el-icon-goods"></i>
               <span>商品管理</span>
             </template>
-             <el-menu-item index="/categories" @click="saveName('/categories')">
+            <el-menu-item index="/categories" @click="saveName('/categories')">
               <template slot="title">
                 <i class="el-icon-location"></i>
                 <span>商品分类</span>
@@ -60,30 +69,36 @@
                 <span>分类参数</span>
               </template>
             </el-menu-item>
-               <el-menu-item index="/list" @click="saveName('/list')">
+            <el-menu-item index="/list" @click="saveName('/list')">
               <template slot="title">
                 <i class="el-icon-location"></i>
                 <span>商品列表</span>
               </template>
             </el-menu-item>
           </el-submenu>
-             <el-submenu index="4">
+          <el-submenu index="4">
             <template slot="title">
               <i class="el-icon-location"></i>
               <span>订单管理</span>
             </template>
-               <el-menu-item index="/order" @click="saveName('/order')">
+            <el-menu-item index="/order" @click="saveName('/order')">
               <template slot="title">
                 <i class="el-icon-location"></i>
                 <span>订单列表</span>
               </template>
             </el-menu-item>
           </el-submenu>
-             <el-submenu index="5">
+          <el-submenu index="5">
             <template slot="title">
               <i class="el-icon-location"></i>
               <span>数据统计</span>
             </template>
+            <el-menu-item index="/report" @click="saveName('/report')">
+              <template slot="title">
+                <i class="el-icon-location"></i>
+                <span>数据报表</span>
+              </template>
+            </el-menu-item>
           </el-submenu>
         </el-menu>
       </el-aside>
@@ -98,13 +113,13 @@
 export default {
   created() {
     this.getmenu();
-    this.menuname = window.sessionStorage.getItem('menuName');
+    this.menuname = window.sessionStorage.getItem("menuName");
   },
   data() {
     return {
       menulist: [],
-      isCollapse:false,
-      menuname:'',
+      isCollapse: false,
+      menuname: ""
     };
   },
   methods: {
@@ -116,11 +131,11 @@ export default {
       const { data: res } = await this.$http.get("menus");
       this.menulist = res.data;
     },
-    toggle(){
-      this.isCollapse = ! this.isCollapse; 
+    toggle() {
+      this.isCollapse = !this.isCollapse;
     },
-    saveName(name){
-      window.sessionStorage.setItem('saveName',name);
+    saveName(name) {
+      window.sessionStorage.setItem("saveName", name);
       this.menuname = name;
     }
   }
@@ -152,10 +167,10 @@ export default {
     font-size: 20px;
   }
 }
-.el-menu{
+.el-menu {
   border-right: none;
 }
-.menutoggle{
+.menutoggle {
   color: #fff;
   line-height: 24px;
   text-align: center;
