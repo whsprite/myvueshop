@@ -72,6 +72,12 @@
               <i class="el-icon-location"></i>
               <span>订单管理</span>
             </template>
+               <el-menu-item index="/order" @click="saveName('/order')">
+              <template slot="title">
+                <i class="el-icon-location"></i>
+                <span>订单列表</span>
+              </template>
+            </el-menu-item>
           </el-submenu>
              <el-submenu index="5">
             <template slot="title">
